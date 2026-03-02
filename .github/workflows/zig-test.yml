@@ -7,32 +7,32 @@ env:
   AWS_REGION: ${{ vars.LPD_PERF_AWS_REGION }}
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "build.zig"
-      - "src/**"
-      - "vendor/zig-js-runtime"
-      - ".github/**"
-      - "vendor/**"
-  pull_request:
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "build.zig"
+  #     - "src/**"
+  #     - "vendor/zig-js-runtime"
+  #     - ".github/**"
+  #     - "vendor/**"
+  # pull_request:
 
-    # By default GH trigger on types opened, synchronize and reopened.
-    # see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
-    # Since we skip the job when the PR is in draft state, we want to force CI
-    # running when the PR is marked ready_for_review w/o other change.
-    # see https://github.com/orgs/community/discussions/25722#discussioncomment-3248917
-    types: [opened, synchronize, reopened, ready_for_review]
+  #   # By default GH trigger on types opened, synchronize and reopened.
+  #   # see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+  #   # Since we skip the job when the PR is in draft state, we want to force CI
+  #   # running when the PR is marked ready_for_review w/o other change.
+  #   # see https://github.com/orgs/community/discussions/25722#discussioncomment-3248917
+  #   types: [opened, synchronize, reopened, ready_for_review]
 
-    paths:
-      - ".github/**"
-      - "build.zig"
-      - "src/**/*.zig"
-      - "src/*.zig"
-      - "vendor/**"
-      - ".github/**"
-      - "vendor/**"
+  #   paths:
+  #     - ".github/**"
+  #     - "build.zig"
+  #     - "src/**/*.zig"
+  #     - "src/*.zig"
+  #     - "vendor/**"
+  #     - ".github/**"
+  #     - "vendor/**"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

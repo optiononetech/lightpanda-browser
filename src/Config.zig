@@ -225,7 +225,7 @@ pub const HttpHeaders = struct {
 
     pub fn init(allocator: Allocator, config: *const Config) !HttpHeaders {
         const user_agent: [:0]const u8 = if (config.userAgentSuffix()) |suffix|
-            try std.fmt.allocPrintSentinel(allocator, "{s} {s}", .{ user_agent_base, suffix }, 0)
+            try std.fmt.allocPrintSentinel(allocator, "{s}", .{ suffix }, 0)
         else
             user_agent_base;
         errdefer if (config.userAgentSuffix() != null) allocator.free(user_agent);

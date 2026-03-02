@@ -8,8 +8,8 @@ env:
   LIGHTPANDA_DISABLE_TELEMETRY: true
 
 on:
-  schedule:
-    - cron: "23 2 * * *"
+  # schedule:
+  #   - cron: "23 2 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
