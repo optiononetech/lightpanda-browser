@@ -414,7 +414,7 @@ const TransferAsResponseWriter = struct {
 };
 
 fn idFromRequestId(request_id: []const u8) !u64 {
-    if (!std.mem.startsWith(u8, request_id, "REQ-")) {
+    if (!std.mem.startsWith(u8, request_id, "REQ-") & !std.mem.startsWith(u8, request_id, "RID-")) {
         return error.InvalidParams;
     }
     return std.fmt.parseInt(u64, request_id[4..], 10) catch return error.InvalidParams;
